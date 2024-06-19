@@ -3,7 +3,7 @@ from flask import Flask, jsonify, Response, request
 import requests
 import json
 from routes.data import get_data
-from routes.weather import get_weather
+from routes.weather import get_weather,get_weather_house
 
 app = Flask(__name__)
 
@@ -19,7 +19,7 @@ def hello1():
 
 app.add_url_rule('/api/data', 'get_data', get_data, methods=['GET'])
 app.add_url_rule('/api/weather', 'get_weather', get_weather, methods=['GET'])
-
+app.add_url_rule('/api/weather-house', 'get_weather_house', get_weather_house, methods=['GET'])
 
 
 
